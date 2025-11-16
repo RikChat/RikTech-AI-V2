@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RikTech AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563eb">
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="splash-screen">
+        <div class="splash-content">
+            <div class="logo-container">
+                <i class="fas fa-robot logo-icon"></i>
+                <h1 class="logo-text">RikTech AI</h1>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="app-title">RikTech AI</h1>
+            <p class="app-subtitle">Asisten AI Modern Anda</p>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-btn active" data-page="home">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </button>
+            <button class="nav-btn" data-page="generate-code">
+                <i class="fas fa-code"></i>
+                <span>Generate Code</span>
+            </button>
+            <button class="nav-btn" data-page="info">
+                <i class="fas fa-info-circle"></i>
+                <span>Info</span>
+            </button>
+        </nav>
+
+        <!-- Pages -->
+        <main class="main-content">
+            <!-- Home Page -->
+            <section id="home-page" class="page active">
+                <div class="chat-container">
+                    <div class="model-selector">
+                        <label for="ai-model">Pilih Model AI:</label>
+                        <select id="ai-model" class="model-select">
+                            <option value="openai">OpenAI GPT-4</option>
+                            <option value="gemini">Google Gemini</option>
+                        </select>
+                    </div>
+                    
+                    <div class="chat-history" id="chat-history">
+                        <!-- Chat messages will appear here -->
+                        <div class="welcome-message">
+                            <div class="message bot-message">
+                                <div class="message-avatar">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="message-content">
+                                    <p>Halo! Saya RikTech AI. Ada yang bisa saya bantu hari ini?</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="input-container">
+                        <div class="input-wrapper">
+                            <textarea id="user-input" class="user-input" placeholder="Ketik pertanyaan atau permintaan Anda di sini..."></textarea>
+                            <button id="generate-btn" class="generate-btn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Generate Code Page -->
+            <section id="generate-code-page" class="page">
+                <div class="code-generator">
+                    <h2 class="page-title">Generate Kode</h2>
+                    <p class="page-description">Deskripsikan kode yang Anda butuhkan dan AI akan membuatkannya untuk Anda</p>
+                    
+                    <div class="code-form">
+                        <div class="form-group">
+                            <label for="code-prompt">Deskripsi Kode:</label>
+                            <textarea id="code-prompt" class="code-input" placeholder="Contoh: Buat fungsi JavaScript untuk validasi email"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="code-language">Bahasa Pemrograman:</label>
+                            <select id="code-language" class="language-select">
+                                <option value="javascript">JavaScript</option>
+                                <option value="python">Python</option>
+                                <option value="html">HTML</option>
+                                <option value="css">CSS</option>
+                                <option value="java">Java</option>
+                                <option value="php">PHP</option>
+                                <option value="cpp">C++</option>
+                            </select>
+                        </div>
+                        
+                        <button id="generate-code-btn" class="generate-code-btn">
+                            <i class="fas fa-code"></i>
+                            Generate Kode
+                        </button>
+                    </div>
+                    
+                    <div class="code-output-container">
+                        <div class="code-header">
+                            <h3>Hasil Kode:</h3>
+                            <button id="copy-code-btn" class="copy-btn">
+                                <i class="far fa-copy"></i>
+                                Salin
+                            </button>
+                        </div>
+                        <pre id="code-output" class="code-output"><code>// Kode akan muncul di sini</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Info Page -->
+            <section id="info-page" class="page">
+                <div class="info-container">
+                    <div class="app-info-card">
+                        <div class="app-logo">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h2 class="app-name">RikTech AI</h2>
+                        <p class="app-version">Versi 1.0.0</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3 class="info-title">Tentang Aplikasi</h3>
+                        <p class="info-text">
+                            RikTech AI adalah aplikasi web modern yang memanfaatkan teknologi AI terdepan 
+                            seperti OpenAI dan Google Gemini untuk membantu Anda dalam berbagai tugas, 
+                            termasuk percakapan AI dan pembuatan kode.
+                        </p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3 class="info-title">Tentang Developer</h3>
+                        <p class="info-text">
+                            Aplikasi ini dikembangkan oleh RikTech, sebuah tim pengembang yang berfokus 
+                            pada pembuatan solusi teknologi inovatif dengan desain yang elegan dan fungsional.
+                        </p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3 class="info-title">Social Media</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-twitter"></i>
+                                Twitter
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-linkedin"></i>
+                                LinkedIn
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                                Instagram
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3 class="info-title">Lisensi</h3>
+                        <p class="info-text">
+                            Aplikasi ini dilisensikan di bawah MIT License. 
+                            Anda bebas menggunakan, memodifikasi, dan mendistribusikan kode ini.
+                        </p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3 class="info-title">Dibuat Dengan</h3>
+                        <div class="tech-stack">
+                            <span class="tech-item">HTML</span>
+                            <span class="tech-item">CSS</span>
+                            <span class="tech-item">JavaScript</span>
+                            <span class="tech-item">OpenAI API</span>
+                            <span class="tech-item">Gemini API</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
