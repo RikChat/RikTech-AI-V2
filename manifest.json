@@ -1,0 +1,23 @@
+{
+  "name": "RikTech AI",
+  "short_name": "RikTechAI",
+  "description": "Aplikasi AI modern dengan dukungan OpenAI dan Gemini",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["productivity", "utilities"]
+}
